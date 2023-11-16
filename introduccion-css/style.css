@@ -1,0 +1,143 @@
+/*
+Seleccionaremos los elementos de nuestra página enlazada
+## Seleccion en cascada de estilos -> (menor prioridad) De lo más general -> A lo más específico (mayor prioridad)
+-> Selector de todos los elementos '*{}' 
+-> Selector de etiqueta 'nombre_etiqueta{}'
+-> Selector de etiquetas hijas 'etiqueta_madre etiqueta_hija{}'
+-> Selector de etiquetas hijas directas 'etiqueta_madre > etiqueta_hija{}'
+-> Selector de clase '.nombre_clase{}'
+-> Selector de id '#id_único{}'
+## Podemos seleccionar diferentes elemensos si los separamos por comas en el selector
+## Podemos seleccionar clases que estén dentro de un elemento -> .article h2{ (selecciona solo los h2 de los articulos) }
+*/
+
+*{ /* reseteamos elementos por defecto del navegador */
+
+   margin: 0%;
+   padding: 0%; 
+}
+
+/* Seleccionamos todo el body */
+body{
+    background-color: aliceblue;
+
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; /*menor prioridad*/
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; /* prioridad intermedia */
+    font-family: 'Courier New', Courier, monospace; /* mayor prioridad*/
+}
+
+/* Elemento contenedor principal */
+.container{
+
+    /* seleccionamos el ancho del objeto */
+    width: 70%; /* '%' mantener una proporción; usar px para una cantidad fija; usar cal(''), etc*/
+    margin: 0px auto; /* establecemos el margen respecto al exterior del contenedor (lo centra horizontal) */
+    /* ponemos el borde para ver el contenedor */
+    border: 1px solid grey;
+}
+
+/* Creamos el estilo para el header (NO heaad = metadatos) */
+header{
+
+    background-color: brown;
+    /* alto del header */
+    height: 100px;
+    width: 100%;
+    margin: 0% auto;
+    /* centramos los textos */
+    text-align: center;
+    line-height: 100px; /* misma altura de la caja header */
+    /* color del texto */
+    color: white; /* color de las fuentes */
+}
+
+/* propiedades propias del nav */
+nav{
+    background-color: aquamarine;
+    height: 50px;
+    width: 100%;
+
+
+
+}
+
+/* seleccionamos todos los elementos li dentro de ul que a su vez están dentro de nav */
+nav ul li {
+
+    float:left; /* los elementos se flotan a la izquierda */
+    list-style: none; /* separamos los elementos y quitamos los estios */
+    margin: 10px;
+    line-height: 30px; /* chapuzerío que te crió */
+
+}
+
+
+/*
+CREAMOS EN EL HTML UN div class="clearfix" AUXILIAR 
+PARA EVITAR QUE LOS ELEMENTOS DEBAJO DEL ÚLTIMO ELEMENTO FLOTADO SUBA
+-> damos a este elemento la siguiente propiedad
+*/
+.clearfix{
+
+    clear: both;
+}
+
+/* Damos estilos al contenido */
+.content{
+
+    float: left; /* como antes, el sig elemento se va a venir arriba (en este caso el footer) */
+    width: calc(80% - 40px); /* 80% del container */
+    background-color: lightskyblue;
+    min-height: calc(500px - 40px);
+    /* Al poner paddding debemos calcular en el ancho */
+    padding: 20px;
+    
+}
+
+/* Estilos de la barra lateral */
+aside{
+
+    width: calc(20% - 20px); /* usamos el 20% del container menos 20px del padding (10px * 2)*/
+    /* Si ponemos padding sin más vamos a tener errores de espacio, necesitamos calcular en el width */
+    padding: 10px;
+
+    float: left;
+    background-color: chocolate;
+    min-height: calc(500px - 20px);
+
+}
+
+footer{
+
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    background-color: black;
+    color: white;
+}
+
+/* Damos estilos a los articulos */
+.article{
+
+    color: aliceblue;
+    margin: 15px;
+    border-bottom: 1px solid aliceblue;
+
+    padding-bottom: 10px;
+}
+
+/* propiedad para cuando pasamos el raton por encima 
+    -> Podemos añadir a esto una transición */
+.article:hover{
+
+    border-left: 2px solid aliceblue;
+    padding: 20px;
+}
+
+/* Seleccionamos todos los h2 de los articulos */
+.article h2{
+    font-size: 25px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+

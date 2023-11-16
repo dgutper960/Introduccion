@@ -1,0 +1,95 @@
+body {
+  background-color: beige;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/** Estilos para cada caja */
+.caja {
+  border: 1px solid #ccc;
+  background-color: white;
+  color: black;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold; /*negrita*/
+  width: 200px;
+  /* height: 120px; */
+  text-align: center; /* centrado texto horizontal */
+  line-height: 200px; /* centrado texto vertical */
+  margin: 5px;
+}
+
+/* vamos a controlara los elementos contenidos en .flex-container */
+.flex-container {
+  /** estilos para ver el contenedor */
+  background-color: grey;
+  padding: 15px;
+  border: 1px solid black;
+  margin-top: 50px;
+  margin-left: 100px;
+  margin-right: 100px;
+
+  /** PROPIEDADES DE FLEXBOX */
+  display: flex; /* de por si, hace que los elementos se comporten como flex-direccion row */
+  /*flex-direction: row; /* fuerza elementos en fila */
+  /*flex-direction: column; /* fuerza elementos en columna */
+  /*flex-direction: row-reverse; /* coloca los elementos en orden invertido */
+
+  /* si añadimos más elementos se van a colocar según la disposición indicada 
+    -> Por defecto flexbox va a mantener una línea por muchos elementos que entren (se apelotonan) 
+    -> con la propiedad wrap podemos controlar eso */
+  /* flex-wrap: wrap; con flex flow ya no es necesario */
+  /*podemos usar flex-flow para controlar que sea como línea y multilinea */
+  /*  flex-flow: row wrap-reverse; */ /* y demás propiedades de flex */
+
+  /*
+    Si ponemos un tamaño al contenedor y no le ponemos tamaño a los objetos hijos
+    los objetos van a ocupar todo el tamaño posible
+    */
+  height: 1000px;
+  width: 1500px;
+  /* con la propiedad aling-items podemos decir como queremos que se coloquen los elementos entre sí */
+  /* align-items: start; */
+  /* align-items: center; -> centrado en vertical */
+  /* align-items: flex-end; */
+  /* justify-content: space-around; /* los elementos se reparten el espacio en horizontal  */
+  /* align-content: flex-start;  */
+
+  /*seguiremos con estas propiedades*/
+  flex-flow: row wrap;
+  justify-content: center;
+  align-content: center;
+  /* align-items: center; */
+  /* añadimos clases a las cajas */
+
+  /*
+  TODO LEMENTO QUE ESTÉ EN UN FLEX CONTAINER 
+  -> SE PUEDE ORDENAR CON LA SIG PROPIEDAD
+  -> PODEMOS DECIRLE EL ESPACIO QUE VA A OCUPAR DENTRO DEL CONTENEDOR
+  */
+  .c1 {
+    order: 3;
+    background-color: azure;
+    flex-grow: 5;
+  }
+
+  .c2 {
+    order: 1;
+    background-color: lightblue;
+    flex-grow: 1;
+  }
+
+  .c3 {
+    order: 4;
+    background-color: lightgoldenrodyellow;
+    flex-grow: 1;
+    /* lo podemos complementar con la propiedad flex basis e indicar porcenntajes */
+    flex-basis: 30%; /* se complementa con grow (puede funcionar de por si) */
+  }
+
+  .c4 {
+    order: 2;
+    background-color: lightpink;
+    flex-grow: 3;
+  }
+}

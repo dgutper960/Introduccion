@@ -1,0 +1,96 @@
+body{
+  background-color: antiquewhite;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  text-align: center;
+}
+
+/*
+GRID ACTUA SOLO EN LOS HIJOS DIRECTOS
+*/
+.grid-layout{
+display: grid;
+/* seleccionamos el num de columnas y su comportamiento */
+/*grid-template-columns: 50% 20% auto; /* tendria n columnas con ditribución auto o en porcentaje */
+/* seleccionamos el num de filas y su comportamiento */
+/*grid-template-rows: 100px auto; /* la primera tiene 100px y el resto auto */
+
+/*seguimos con esta configuración*/
+grid-template-columns: auto auto auto; 
+grid-template-rows: auto; 
+
+/* podemos distribuir el contenido como con flex */
+/* justify-content: space-around; */
+justify-content: stretch; /*-> por defecto*/
+
+width: 80%;
+margin: 0 auto; /* para centrar el elemento */
+background-color: lightblue;
+padding: 20px;
+border: 1px solid black;
+
+}
+
+
+/*
+SELECCIONAMOS TODAS LAS CAJAS
+*/
+.caja{
+
+  /* width: 150px;
+  height: 150px; */
+  border: 4px solid black;
+  background-color: lightgray;
+  /* margin: 15px; */
+  text-align: center;
+  line-height: 150px;
+  /* float: left; (con grid no es necesario) */
+
+}
+
+/*
+SELECCIONAMOS LAS CAJAS INDIVIDUALMENTE 
+*/
+.c1{
+  background-color: darkseagreen;
+/* decimos que la caja 1 ocupe de la col 1 a la 4 (en este caso el 100%) */
+grid-column: 1/4; 
+
+}
+
+.c2{
+  background-color: aliceblue;
+  grid-column: 1/3;  
+
+}
+
+.c3{
+
+background-color: bisque;
+grid-column: 3/4; /* la ultima columna */
+
+}
+
+.c12{
+
+background-color: cadetblue;
+/* grid-column: 1/4; */
+grid-column: 1 / span 3; /* empieza en la 1 y se esoande 3*/
+
+}
+
+.c11{
+
+  background-color: chocolate;
+  grid-column: 2/4;
+}
+
+/*
+LAS MISMAS REGLAS LAS PODEMOS APLICAR A GRID ROWS
+-> La caja 4 va a ocupar 4 filas
+*/
+.c4{
+
+  background-color: lightsalmon;
+  grid-row: 3 / span 4; /* empieza en la 3 y espande 4 filas (así rellena los huecos) */
+
+}

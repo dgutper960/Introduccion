@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Introduccion - Repaso HTML</title>
+    <!--- Título para la pestaña -->
+  </head>
+  <body>
+    <h1 id="encabezado">Encabezado de esta página</h1>
+    <h6>Encabezado de sexto nivel</h6>
+    <p>Para ir al formulario pulse <a href="#formulario"></a></p>
+
+    <p>Párrafo 1 de la página</p>
+    <p>Parrafo 2 de la página</p>
+    <br />
+    <p>Parrafo después del salto de línea con <br /></p>
+    <hr />
+    <img
+      height="900px"
+      src="https://cdn.pixabay.com/photo/2023/11/01/11/12/hallstatt-8357170_640.jpg"
+      alt="Paisaje"
+    />
+    <hr />
+    <h2>Enlaces</h2>
+    <ul>
+      <li><a href="pag_2.html">Esto es un enlace a una pagina interna</a></li>
+      <li>
+        <a href="https://pixabay.com/es/"
+          >Esto es un enlace a una página externa</a
+        >
+      </li>
+      <li><a href="#encabezado">Ancla al encabezado de esta página</a></li>
+    </ul>
+    <hr />
+    <h2 id="formulario">Formularios</h2>
+    <!-- etiqueta para englobar diferentes campos fieldset -->
+
+    <form action="nombre-archivo" method="GET/POST">
+      <fieldset class="campo1">
+        <legend>Campo 1</legend>
+        <label for="nombre">Nombre</label>
+        <input
+          type="text"
+          placeholder="Introduzca nombre"
+          name="nombre"
+          required
+        />
+
+        <label for="apellidos">Apellidos</label>
+        <input
+          type="text"
+          placeholder="Introduzca sus apellidos"
+          name="apellidos"
+          required
+        />
+
+        <br />
+
+        <label for="email">Email</label>
+        <input
+          type="email"
+          placeholder="Introduzca correo"
+          name="email"
+          required
+        />
+
+        <label for="telefono">Telefono</label>
+        <input
+          type="number"
+          placeholder="Introduzca su telefono"
+          name="telefono"
+          required
+        />
+      </fieldset>
+
+      <fieldset class="campo2">
+        <legend>Campo 2</legend>
+        <label for="direccion">Dirección</label>
+        <input
+          type="text"
+          placeholder="Dirección (opcional)"
+          name="direccion"
+        />
+
+        <label for="ciudad">Ciudad</label>
+        <input type="text" placeholder="Ciudad (opcional)" name="apellidos" />
+
+        <br />
+
+        <label for="profesion">Profesión</label>
+        <input
+          type="profesion"
+          placeholder="Profesión (Opcional)"
+          name="profesion"
+        />
+
+        <label for="activo">Activo</label>
+        <select name="activo" id="">
+          <option value="true">Si</option>
+          <option value="false">No</option>
+        </select>
+
+        <br />
+
+        <label for="username">Nombre de usuario</label>
+        <input
+          type="text"
+          placeholder="Nombre de usuario"
+          name="username"
+          required
+        />
+
+        <br />
+
+        <label for="password">Contraseña</label>
+        <input
+          type="password"
+          placeholder="Su contraseña"
+          name="password"
+          required
+        />
+        <br />
+        <label for="password">Contraseña</label>
+        <input
+          type="password"
+          placeholder="Repita Contraseña"
+          name="password"
+          required
+        />
+      </fieldset>
+
+      <button type="reset">Borrar</button>
+      <button type="submit">Enviar</button>
+    </form>
+  </body>
+</html>

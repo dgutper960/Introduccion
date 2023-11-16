@@ -1,0 +1,76 @@
+/*
+LA PRTICULARIDAD DE SASS ES QUE PODEMOS USAR CSS COMO SI DE UN LENGUAJE DE PROGRAMACIÓN SE TRATASE
+-> Nosotros vamos a trabajar en el archivo sass y node lo irá compilando automáticamente
+*/
+/*
+podemos almacenar elementos de estilos en variables
+*/
+$color-body-back: #faebd7;
+$color-h1: #6dd8cb;
+$color-p: #d96fcf;
+$font-body: 'Courier New', Courier, monospace;
+
+body{
+
+    background-color: $color-body-back;
+    font-family: $font-body;
+
+}
+
+h1{
+    color: $color-h1;
+}
+
+p{
+    color: $color-p;
+}
+
+/*
+Podemos usar la anidación de la sig forma
+-> Tenemos un h1 y un p dentro de un div de la clase caja
+-> podemos usar el selector de la caja y luego referirnos a elementos de dentro de esa caja
+-> esto es útil para tener nuestro codigo mejor estructurado y con menos líneas
+*/
+.caja{
+
+    h1{
+        color:blueviolet;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+
+    p{
+        color: cornflowerblue;
+        font-size: large;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+
+
+}
+
+/*
+PODEMOS USAR OTROS FIXEROS SASS PARA MODULIZAR EL TRABAJO
+*/
+
+/*
+PODEMOS USAR FUNCIONES
+-> Una utilidad puede ser tener estilos completos personaloizados para cargarlos
+*/
+@mixin caja_personalizada($fondo: white){
+    background-color: $fondo;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    border: 4px solid black;
+    box-shadow: 0px 0px 2px black;
+    color: $color-p; /* uso de veriable global */
+    margin: 20px;
+}
+/*
+-> Ahora puedo importar este estilo en una clase, elemento, etc
+*/
+.caja_2{
+    @include caja_personalizada(); /* podriamos pasar un color por argumento para el fondo */
+}
+
+.caja_3{
+    @include caja_personalizada($fondo:yellow)
+}
+
