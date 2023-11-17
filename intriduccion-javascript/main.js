@@ -32,6 +32,9 @@ datos.innerHTML += `Primer uso de innerHTML por ${nombre} el día ${fecha_creaci
 var n1 = 'Agustín';
 var n2 = 'Manuela';
 var n3 = 'Josefina';
+var a1 = 'Jimenez';
+var a2 = 'Nuñez';
+var a3 = 'Mateos';
 var e1 = 29;
 var e2 = 17;
 var e3 = 30;
@@ -82,5 +85,55 @@ tabla.innerHTML += `
 
 `;
 
+/**
+ * Podemos usar bucles
+ * y cualquier cosa que se nos ocurra
+ */
+
+for(e3; e3 <= 40 ; e3++){
+  tabla.innerHTML += `<p>el valor de e3 es ${e3}</p>`;
+}
+
+/**
+ * Creamos una funcion
+ */
+function nombreCompleto(nombre, apellido){
+  return `Mi nombre completo es ${nombre} ${apellido}`;
+}
+
+var resultado = document.getElementById('funcion');
+
+resultado.innerHTML += nombreCompleto(n2, a3)+"<br><br>";
+
+/**
+ * Manejo de arrays
+ */
+var nombres = [
+
+  'Paco',
+  'Manuela',
+  'Gonzalo',
+  'Piscila',
+  'Pedro',
+  'Florentina',
+  'Gerardo',
+  'Fermín',
+  'Andrea',
+  'Sonia'
+
+];
+
+// recorremos el array e imprimimos solo el nombre buscado
+function buscarNombre(array=[], nombre){
+  var array = array;
+  array.forEach(element => {
+    if(element === nombre){
+      string = `Se ha encontrado el nombre \'${element}\' <br><br>`
+    }
+  });
+  return string;
+}
+
+resultado.innerHTML += buscarNombre(nombres, 'Sonia');
 
 
